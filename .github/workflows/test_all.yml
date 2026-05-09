@@ -1,0 +1,22 @@
+name: Executar tests amb Unittest i Pytest
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Configurar Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - name: Instal·lar pytest
+      run: pip install pytest
+    - name: Tests Unittest
+      run: python -m unittest karimatascaunitest.py
+    - name: Tests Pytest
+      run: pytest test_tasca03_pytest_karima.py -v
