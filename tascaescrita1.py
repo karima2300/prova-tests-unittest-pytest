@@ -85,19 +85,5 @@ def afegir_a_biblioteca(titol, videojocs, biblioteca):
 
 
 def joc_mes_car(videojocs):
-    """
-    Retorna el videojoc amb el preu més alt.
+    return None
 
-    Args:
-        videojocs (list): Llista de videojocs.
-
-    Returns:
-        dict: Videojoc amb el preu més alt.
-    """
-    joc_mes_car = videojocs[0]
-
-    for joc in videojocs:
-        if joc["preu"] > joc_mes_car["preu"]:
-            joc_mes_car = joc
-
-    return joc_mes_car
